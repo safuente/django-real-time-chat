@@ -43,7 +43,7 @@ test:
 
 # Create test superuser (only for testing)
 superuser:
-	$(DOCKER_COMPOSE) run --rm app python manage.py shell -c "from django.contrib.auth import get_user_model; user = get_user_model().objects.create_superuser('admin@idoven.com', 'supersegura')"
+	$(DOCKER_COMPOSE) run --rm app sh -c "python manage.py createsuperuser"
 
 # Create test user (only for testing)
 user:
